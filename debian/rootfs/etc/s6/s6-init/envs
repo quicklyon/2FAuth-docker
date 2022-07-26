@@ -1,0 +1,68 @@
+#!/bin/bash
+
+#==========#
+#   php    #
+#==========#
+export PHP_SESSION_TYPE=${PHP_SESSION_TYPE:-files}
+export PHP_SESSION_PATH=${PHP_SESSION_PATH:-/data/php/session}
+export PHP_ERROR_LOG=${PHP_ERROR_LOG:-/data/php/log/error.log}
+
+#==========#
+#  2FAuth  #
+#==========#
+export APP_NAME=2FAuth \
+       APP_ENV=${APP_ENV:-local} \
+       APP_DEBUG=${APP_DEBUG:-false} \
+       SITE_OWNER=${SITE_OWNER:-mail@example.com} \
+       APP_KEY=faeW6yah4ophieGh9ashox3aequii2Oo \
+       APP_URL=${APP_DOMAIN:-http://localhost} \
+       IS_DEMO_APP=false \
+       LOG_CHANNEL=daily \
+       APP_LOG_LEVEL=notice \
+       DB_CONNECTION=sqlite \
+       DB_DATABASE="/data/db/database.sqlite" \
+       CACHE_DRIVER=file \
+       SESSION_DRIVER=file \
+       MAIL_DRIVER=log \
+       MAIL_HOST=smtp.mailtrap.io \
+       MAIL_PORT=2525 \
+       MAIL_FROM=${MAIL_FROM:-root@qucheng.com} \
+       MAIL_USERNAME=${MAIL_USERNAME:-NULL} \
+       MAIL_PASSWORD=${MAIL_PASSWORD:-NULL} \
+       MAIL_ENCRYPTION=${MAIL_ENCRYPTION:-NULL} \
+       MAIL_FROM_NAME=${MAIL_FROM_NAME:-NULL} \
+       MAIL_FROM_ADDRESS=${MAIL_FROM_ADDRESS:-NULL} \
+       AUTHENTICATION_GUARD=web-guard \
+       AUTH_PROXY_HEADER_FOR_USER=null \
+       AUTH_PROXY_HEADER_FOR_EMAIL=null \
+       PROXY_LOGOUT_URL=null \
+       WEBAUTHN_NAME=2FAuth \
+       WEBAUTHN_ID=null \
+       WEBAUTHN_ICON=null \
+       WEBAUTHN_USER_VERIFICATION=preferred \
+       TRUSTED_PROXIES=null \
+       BROADCAST_DRIVER=log \
+       QUEUE_DRIVER=sync \
+       SESSION_LIFETIME=120 \
+       REDIS_HOST=127.0.0.1 \
+       REDIS_PASSWORD=null \
+       REDIS_PORT=6379 \
+       PUSHER_APP_ID="${PUSHER_APP_ID:-NULL}" \
+       PUSHER_APP_SECRET=${PUSHER_APP_SECRET:-NULL} \
+       PUSHER_APP_CLUSTER=mt1 \
+       MIX_ENV=local
+
+# ======================#
+# Persistence directory #
+#=======================#
+export PHP_PERSISTENCE_LIST=(
+"/data/php/session"
+"/data/db/"
+"/data")
+
+
+#==========================================#
+# Persistence directory and make soft link #
+#==========================================#
+export PERSISTENCE_LINK_LIST=(
+"/data/2fauth/storage")

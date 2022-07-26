@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# change compose url
+if [ "$MIRROR" = "true" ];then
+    composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+fi

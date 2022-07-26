@@ -1,0 +1,12 @@
+{
+    "Name": "2FAuth",
+    "Home": "https://docs.2fauth.app/",
+    "GitUrl": "https://github.com/Bubka/2FAuth",
+    "DockerfileUrl": "https://github.com/quicklyon/2FAuth-docker",
+    "InstallDocUrl": "https://www.qucheng.com/app-install/install-2FAuth-130.html",
+    "Docker": {
+        "Name": "2fauth",
+        "Repo": "https://hub.docker.com/r/easysoft/2fauth",
+        "TagUrl": "https://hub.docker.com/r/easysoft/2fauth/tags/"
+    }
+}
