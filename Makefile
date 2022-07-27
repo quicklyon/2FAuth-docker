@@ -14,7 +14,7 @@ build-public: ## 国外构建镜像
 push: ## push 镜像到 hub.qucheng.com
 	docker push hub.qucheng.com/app/$(APP_NAME):$(TAG)-$(BUILD_DATE)
 
-docker-push: ## push 镜像到 hub.docker.com
+push-public: ## push 镜像到 hub.docker.com
 	docker tag hub.qucheng.com/app/$(APP_NAME):$(TAG)-$(BUILD_DATE) easysoft/$(APP_NAME):$(TAG)-$(BUILD_DATE)
 	docker tag easysoft/$(APP_NAME):$(TAG)-$(BUILD_DATE) easysoft/$(APP_NAME):latest
 	docker push easysoft/$(APP_NAME):$(TAG)-$(BUILD_DATE)
