@@ -5,5 +5,3 @@
 
 - 启动成功后，打开浏览器输入 `http://<你的IP>:8000` 访问管理后台。
 - 建议添加https证书，否则部分功能无法正常使用。
-- [VERSION]({{APP_GIT_URL}}/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
-- [docker-compose.yml]({{APP_GIT_URL}}/blob/main/docker-compose.yml)。

@@ -85,3 +85,5 @@ docker-compose logs -f {{APP_DOCKER_IMAGE_NAME}}
 ```
 
 {{MAKE_EXTRA_INFO}}
+- [VERSION]({{APP_DOCKERFILE_GIT_URL}}/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
+- [docker-compose.yml]({{APP_DOCKERFILE_GIT_URL}}/blob/main/docker-compose.yml)。
