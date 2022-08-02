@@ -4,5 +4,5 @@
 
 [ -n "${DEBUG:+1}" ] && set -x
 
-exec /usr/sbin/php-fpm7 -F
+exec /usr/sbin/php-fpm8 -F
 

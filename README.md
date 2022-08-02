@@ -1,5 +1,12 @@
-<!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/doc-toolkit -->
+<!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/template-toolkit -->
 # QuickOn 2FAuth 应用镜像
+
+![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/2fauth-docker/build?style=flat-square)
+![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/2fauth?style=flat-square)
+![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/2fauth?style=flat-square)
+![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/2FAuth-docker?style=flat-square)
+
+> 申明: 该软件镜像是由QuickOn打包。在发行中提及的各自商标由各自的公司或个人所有，使用它们并不意味着任何从属关系。
 
 ## 快速参考
 
@@ -50,9 +57,8 @@
 
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/2fauth/tags/)
 
-<!-- 这里是应用的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/doc-toolkit -->
-
 - [latest](https://github.com/Bubka/2FAuth/releases)
+- [3.3.0](https://www.qucheng.com/app-dynamic/2fauth-3.30-136.html)
 - [3.2.0](https://github.com/Bubka/2FAuth/releases/tag/v3.2.0)
 
 ## 三、获取镜像
@@ -144,5 +150,5 @@ docker-compose logs -f 2fauth
 
 - 启动成功后，打开浏览器输入 `http://<你的IP>:8000` 访问管理后台。
 - 建议添加https证书，否则部分功能无法正常使用。
-- [VERSION]({{APP_GIT_URL}}/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
-- [docker-compose.yml]({{APP_GIT_URL}}/blob/main/docker-compose.yml)。
+- [VERSION](https://github.com/quicklyon/2FAuth-docker/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
+- [docker-compose.yml](https://github.com/quicklyon/2FAuth-docker/blob/main/docker-compose.yml)。

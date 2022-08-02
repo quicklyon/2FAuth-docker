@@ -1,4 +1,4 @@
-export APP_NAME="2fauth"
+export APP_NAME=2fauth
 export TAG := $(shell cat  VERSION)
 export BUILD_DATE := $(shell date +'%Y%m%d')
 
@@ -26,6 +26,7 @@ push-sync-tcr: push-public ## 同步到腾讯镜像仓库
 
 run: ## 运行
 	export TAG=$(TAG)-$(BUILD_DATE) ;docker-compose -f docker-compose.yml up -d
+	#export TAG=3.2.0-20220727 ;docker-compose -f docker-compose.yml up -d
 
 ps: ## 运行状态
 	docker-compose -f docker-compose.yml ps

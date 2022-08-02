@@ -1,9 +1,9 @@
-FROM php:7.4-alpine3.15 as vendor
+FROM php:8.0-alpine3.15 as vendor
 
 ENV OS_ARCH="amd64" \
     OS_NAME="alpine-3.15"
 
-COPY debian/prebuildfs /
+COPY alpine/prebuildfs /
 
 ARG IS_CHINA="true"
 ENV MIRROR=${IS_CHINA}
@@ -37,15 +37,22 @@ ENV OS_ARCH="amd64" \
 
 LABEL maintainer "zhouyueqiu <zhouyueqiu@easycorp.ltd>"
 
-COPY debian/prebuildfs /
+COPY alpine/prebuildfs /
 
 ARG IS_CHINA="true"
 ENV MIRROR=${IS_CHINA}
 
+# Set timezone
+RUN install_packages tzdata \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" >  /etc/timezone \
+    && date \
+    && apk del --no-cache tzdata
+
 # Install php and nginx
-RUN install_packages php7 php7-phar php7-pdo_sqlite php7-sqlite3 php7-xml \
-    php7-gd php7-mbstring php7-tokenizer php7-cli php7-fileinfo php7-bcmath \
-    php7-ctype php7-dom php7-session php7-json php7-openssl php7-fpm php7-opcache \
+RUN install_packages php8 php8-phar php8-pdo_sqlite php8-sqlite3 php8-xml \
+    php8-gd php8-mbstring php8-tokenizer php8-cli php8-fileinfo php8-bcmath \
+    php8-ctype php8-dom php8-session php8-json php8-openssl php8-fpm php8-opcache \
     nginx curl bash s6
 
 # Install composer
@@ -62,9 +69,9 @@ ENV USER_ID=${UID} \
 RUN addgroup -g ${GID} quickon \
     && adduser -D -H -G quickon -u ${UID} quickon \
     && mkdir /run/php \
-    && chmod 700 /run/php /var/log/php7 \
+    && chmod 700 /run/php /var/log/php8 \
     && touch /run/nginx/nginx.pid /var/lib/nginx/logs/error.log \
-    && chown quickon:quickon /run/php /var/log/php7 /var/lib/nginx /run/nginx/nginx.pid /var/lib/nginx/logs/error.log
+    && chown quickon:quickon /run/php /var/log/php8 /var/lib/nginx /run/nginx/nginx.pid /var/lib/nginx/logs/error.log
 
 ARG VERSION
 ENV APP_VERSION=${VERSION}
@@ -83,7 +90,7 @@ RUN mkdir -p /data \
     && chown -R quickon:quickon /data \
     && chmod 700 /data
 
-COPY debian/rootfs /
+COPY alpine/rootfs /
 
 VOLUME [ "/data"]
 
