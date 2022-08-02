@@ -21,7 +21,7 @@
 
 [2FAuth](https://docs.2fauth.app/) 是一款基于Web、可独立安装的一次性密码生成器（OTP），可替代 Google Authenticator，兼容移动设备与桌面浏览器。
 
-![screenshots](.template/2fauth_screenshots.png)
+![screenshots](https://raw.githubusercontent.com/quicklyon/2FAuth-docker/main/.template/2fauth_screenshots.png)
 
 2FAuth官网：[https://docs.2fauth.app/](https://docs.2fauth.app/)
 
@@ -58,6 +58,7 @@
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/2fauth/tags/)
 
 - [latest](https://github.com/Bubka/2FAuth/releases)
+- [3.3.2](https://github.com/Bubka/2FAuth/releases/tag/v3.3.2)
 - [3.3.0](https://www.qucheng.com/app-dynamic/2fauth-3.30-136.html)
 - [3.2.0](https://github.com/Bubka/2FAuth/releases/tag/v3.2.0)
 
