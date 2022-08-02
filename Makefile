@@ -10,7 +10,7 @@ build: ## 构建镜像
 
 build-public: ## 国外构建镜像
 	docker build --build-arg VERSION=$(TAG) --build-arg IS_CHINA="false" -t easysoft/$(APP_NAME):$(TAG)-$(BUILD_DATE) -f Dockerfile .
-	docker tag easysoft/$(APP_NAME):$(BUILD_DATE) easysoft/$(APP_NAME):latest
+	docker tag easysoft/$(APP_NAME):$(TAG)-$(BUILD_DATE) easysoft/$(APP_NAME):latest
 
 push: ## push 镜像到 hub.qucheng.com
 	docker push hub.qucheng.com/app/$(APP_NAME):$(TAG)-$(BUILD_DATE)
