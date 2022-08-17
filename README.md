@@ -58,6 +58,7 @@
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/2fauth/tags/)
 
 - [latest](https://github.com/Bubka/2FAuth/releases)
+- [3.3.3](https://github.com/Bubka/2FAuth/releases/tag/v3.3.3)
 - [3.3.2](https://github.com/Bubka/2FAuth/releases/tag/v3.3.2)
 - [3.3.0](https://www.qucheng.com/app-dynamic/2fauth-3.30-136.html)
 - [3.2.0](https://github.com/Bubka/2FAuth/releases/tag/v3.2.0)
