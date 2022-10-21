@@ -26,7 +26,9 @@ push-sync-tcr: push-public ## 同步到腾讯镜像仓库
 
 run: ## 运行
 	export TAG=$(TAG)-$(BUILD_DATE) ;docker-compose -f docker-compose.yml up -d
-	#export TAG=3.2.0-20220727 ;docker-compose -f docker-compose.yml up -d
+
+smoke-test: ## 冒烟测试新版
+	hack/make-rules/smoke-test.sh "2Fauth" $(TAG)  "run"
 
 ps: ## 运行状态
 	docker-compose -f docker-compose.yml ps
@@ -43,3 +45,6 @@ clean: stop ## 停服务
 
 logs: ## 查看运行日志
 	docker-compose -f docker-compose.yml logs
+
+release: ## 抓取changelog,按模板生产文档,提交变更
+	/bin/bash hack/make-rules/release

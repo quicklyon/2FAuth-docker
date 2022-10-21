@@ -57,11 +57,9 @@
 
 由于版本比较多,这里只列出最新的5个版本,更详细的版本列表请参考:[可用版本列表](https://hub.docker.com/r/easysoft/2fauth/tags/)
 
+<!-- 这里是镜像的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
 - [latest](https://github.com/Bubka/2FAuth/releases)
-- [3.3.3](https://github.com/Bubka/2FAuth/releases/tag/v3.3.3)
-- [3.3.2](https://github.com/Bubka/2FAuth/releases/tag/v3.3.2)
-- [3.3.0](https://www.qucheng.com/app-dynamic/2fauth-3.30-136.html)
-- [3.2.0](https://github.com/Bubka/2FAuth/releases/tag/v3.2.0)
+- [3.4.0-20221021](https://github.com/Bubka/2FAuth/releases/tag/v3.4.0)
 
 ## 三、获取镜像
 
@@ -147,10 +145,37 @@ docker-compose logs -f 2fauth
 
 <!-- 这里写应用的【make命令的备注信息】位于文档最后端 -->
 
-
 **说明:**
 
 - 启动成功后，打开浏览器输入 `http://<你的IP>:8000` 访问管理后台。
 - 建议添加https证书，否则部分功能无法正常使用。
 - [VERSION](https://github.com/quicklyon/2FAuth-docker/blob/main/VERSION) 文件中详细的定义了Makefile可以操作的版本。
 - [docker-compose.yml](https://github.com/quicklyon/2FAuth-docker/blob/main/docker-compose.yml)。
+
+## 七、版本升级
+
+<!-- 这里是应用的【应用升级】信息，通过命令维护，详情参考：https://github.com/quicklyon/doc-toolkit -->
+容器镜像已为版本升级做了特殊处理，当检测数据（数据库/持久化文件）版本与镜像内运行的程序版本不一致时，会进行数据库结构的检查，并自动进行数据库升级操作。
+
+因此，升级版本只需要更换镜像版本号即可：
+
+> 修改 docker-compose.yml 文件
+
+```diff
+...
+  2fauth:
+-    image: easysoft/2fauth:3.3.0-20220916
++    image: easysoft/2fauth:3.4.0-20221021
+    container_name: 2fauth
+...
+```
+
+更新服务
+
+```bash
+# 是用新版本镜像更新服务
+docker-compose up -d
+
+# 查看服务状态和镜像版本
+docker-compose ps
+```
