@@ -1,7 +1,7 @@
 <!-- 该文档是模板生成，手动修改的内容会被覆盖，详情参见：https://github.com/quicklyon/template-toolkit -->
 # QuickOn 2FAuth 应用镜像
 
-![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/quicklyon/2fauth-docker/build?style=flat-square)
+![GitHub Workflow Status (event)](https://img.shields.io/github/actions/workflow/status/quicklyon/2fauth-docker/docker.yml?style=flat-square)
 ![Docker Pulls](https://img.shields.io/docker/pulls/easysoft/2fauth?style=flat-square)
 ![Docker Image Size](https://img.shields.io/docker/image-size/easysoft/2fauth?style=flat-square)
 ![GitHub tag](https://img.shields.io/github/v/tag/quicklyon/2FAuth-docker?style=flat-square)
@@ -59,6 +59,7 @@
 
 <!-- 这里是镜像的【Tag】信息，通过命令维护，详情参考：https://github.com/quicklyon/template-toolkit -->
 - [latest](https://github.com/Bubka/2FAuth/releases)
+- [3.4.2-20230208](https://github.com/Bubka/2FAuth/releases/tag/v3.4.2)
 - [3.4.1-20221129](https://github.com/Bubka/2FAuth/releases/tag/v3.4.1)
 - [3.4.0-20221021](https://github.com/Bubka/2FAuth/releases/tag/v3.4.0)
 
