@@ -38,8 +38,8 @@ if [ ! -f /data/.init_cfg ];then
 
     info "For the first run, initialize the database."
     touch /data/db/database.sqlite && chown quickon.quickon /data/db/database.sqlite
-    php8 artisan migrate:refresh
-    php8 artisan passport:install
+    php81 artisan migrate:refresh
+    php81 artisan passport:install
     echo "$APP_VERSION" > /data/.init_cfg
 else
     for ldir in "${PERSISTENCE_LINK_LIST[@]}"
@@ -51,7 +51,7 @@ fi
 #=====================#
 #   Prepare PHP       #
 #=====================#
-PHP_INI="/etc/php8/php.ini"
+PHP_INI="/etc/php81/php.ini"
 info "Render ${PHP_INI} with environment variables."
 /usr/bin/render-template ${PHP_INI}.tpl > ${PHP_INI}
 
@@ -61,12 +61,12 @@ if [ "$APP_VERSION" != "$INSTALL_VER" ];then
     warn "Install Version: $INSTALL_VER"
     warn "Image Version: $APP_VERSION "
     warn "New version is detected,updating the database."
-    php8 artisan migrate \
-    && php8 artisan passport:install \
+    php81 artisan migrate \
+    && php81 artisan passport:install \
     && echo "$APP_VERSION" >/data/.init_cfg
 
 fi
 
 # init 2fauth
-php8 artisan storage:link
-php8 artisan config:cache
+php81 artisan storage:link
+php81 artisan config:cache

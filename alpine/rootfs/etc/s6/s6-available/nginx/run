@@ -4,5 +4,7 @@
 
 [ -n "${DEBUG:+1}" ] && set -x
 
+s6-svwait -u -t 30000 /etc/s6/s6-enable/01-php-fpm
+
 exec /usr/sbin/nginx -g 'daemon off;'
 
